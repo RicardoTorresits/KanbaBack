@@ -11,9 +11,9 @@ exports.logInFirebaseDall = async(db,correo) =>{
     }
 }
 
-exports.logInEmaillPassowrdDall = async (db,correo,contraseña) => {
+exports.logInEmaillPassowrdDall = async (db,correo) => {
     try {
-        const query = `exec stp_loginEmailPassowerd @correo='${correo}',@password'${contraseña}'`
+        const query = `exec stp_loginEmailPassowerd @correo='${correo}`
         const result = (await db.query(query)).recordset
         return result
     } catch (error) {

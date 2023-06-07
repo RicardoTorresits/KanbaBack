@@ -2,7 +2,7 @@ const DbConnectionFactory = require('./../helpers/data/DbConnectionFactory');
 const _ = require('lodash');
 const jwt = require('jsonwebtoken');
 
-
+//midleware para poder aignar diferentes bases de datos(clientes) y verificar el token
 const asignarDB = async (req, res, next) => {
     try {
         let empresa = null;
