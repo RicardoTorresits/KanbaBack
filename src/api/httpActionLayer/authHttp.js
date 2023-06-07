@@ -33,7 +33,7 @@ exports.logInEmaillPassowrdHttp = async(req,res=response) => {
         } = req.body
         const {adminDB} = req.dbConnections
         const result = await logInEmaillPassowrdBll(adminDB,correo,contraseña)
-        if (result==='No'){
+        if (result.result==='No'){
             return res.status(400).json({
                 msg:'usuario no autorizadio'
             })
